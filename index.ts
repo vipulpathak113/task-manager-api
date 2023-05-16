@@ -6,6 +6,7 @@ import { Task } from './src/tasks/tasks.entity';
 const app: Express = express();
 import cors from 'cors';
 import bodyParser = require('body-parser');
+import { tasksRouter } from './src/tasks/tasks.routes';
 
 dotenv.config();
 
@@ -37,3 +38,5 @@ AppDataSource.initialize()
   .catch((err) => {
     console.log(err);
   });
+
+app.use('/', tasksRouter);  

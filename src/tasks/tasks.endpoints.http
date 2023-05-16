@@ -1,0 +1,5 @@
+### Fetch all tasks
+
+
+GET http://localhost:3300/tasks
+Content-Type: application/json
