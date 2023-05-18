@@ -30,3 +30,16 @@ export const createValidator: ValidationChain[] = [
     .isIn([Status.todo, Status.inProgress, Status.completed])
     .withMessage('Priority must be one of these values: normal,low,high'),
 ];
+
+export const updateValidator: ValidationChain[] = [
+  body('id')
+    .notEmpty()
+    .withMessage('Id is required')
+    .trim()
+    .isString()
+    .withMessage('ID must be a valid uuid string'),
+  body('status')
+    .trim()
+    .isIn([Status.todo, Status.inProgress, Status.completed])
+    .withMessage('Priority must be one of these values: normal,low,high')
+];
